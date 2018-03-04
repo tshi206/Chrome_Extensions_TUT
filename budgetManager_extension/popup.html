@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Manager</title>
+
+    <!--
+         If importing JQuery from a CDN is required, the following fields need to be modified in the manifest.json:
+            "content_security_policy": ... ,
+            "web_accessible_resources": ...
+         For more details see:
+         https://stackoverflow.com/questions/20287806/how-to-use-jquery-from-jquery-coms-cdn-into-a-chrome-extension
+     -->
+    <!-- JQuery lib src must be placed before any other custom scripts -->
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script src="popup.js"></script>
+
+</head>
+<body>
+    <h1>Budget Manager</h1>
+    <h2>Total Spend: <span id="total">0</span></h2>
+    <h2>Limit: <span id="limit"></span></h2>
+    <label for="amount"><h3>Enter Amount:</h3></label>
+    <input type="text" id="amount" />
+    <input type="submit" id="spendAmount" value="Spend" />
+</body>
+</html>

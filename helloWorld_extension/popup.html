@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+
+    <!--
+         If importing JQuery from a CDN is required, the following fields need to be modified in the manifest.json:
+            "content_security_policy": ... ,
+            "web_accessible_resources": ...
+         For more details see:
+         https://stackoverflow.com/questions/20287806/how-to-use-jquery-from-jquery-coms-cdn-into-a-chrome-extension
+     -->
+    <!-- JQuery lib src must be placed before any other custom scripts -->
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script src="popup.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2 id="greetings">Hello World</h2>
+    <label for="name"></label><input type="text" id="name">
+</body>
+</html>
