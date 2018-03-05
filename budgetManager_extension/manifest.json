@@ -17,6 +17,8 @@
     "default_title": "Manage your budget"
   },
 
+  "options_page": "options.html",
+
   "permissions": [
     "storage"
   ]

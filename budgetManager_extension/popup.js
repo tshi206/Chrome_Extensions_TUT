@@ -1,7 +1,14 @@
 $(() => {
 
+    /*
     chrome.storage.sync.get('total', (obj) => {
        $('#total').text(obj.total ? obj.total : 0)
+    });
+    */
+    // update to acquiring values with two keys respectively in chrome.storage
+    chrome.storage.sync.get(['total', 'limit'], (obj) => {
+        $('#total').text(obj.total ? obj.total : 0);
+        $('#limit').text(obj.limit)
     });
 
     $('#spendAmount').on('click', () => {
