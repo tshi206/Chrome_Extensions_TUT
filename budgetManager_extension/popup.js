@@ -12,7 +12,7 @@ $(() => {
     });
 
     $('#spendAmount').on('click', () => {
-        chrome.storage.sync.get('total', (obj) => {
+        chrome.storage.sync.get(['total', 'limit'], (obj) => {
             let newTotal =
                 obj.total ? parseInt(obj.total) : 0;
 
@@ -22,7 +22,17 @@ $(() => {
             newTotal =
                 amount ? newTotal + parseInt(amount) : newTotal;
 
-            chrome.storage.sync.set({'total': newTotal});
+            chrome.storage.sync.set({'total': newTotal}, () => {
+                if (amount && newTotal >= obj.limit){
+                    let notifOptions = {
+                        type: 'basic',
+                        iconUrl: 'icon48.png',
+                        title: 'Limit reached!',
+                        message: "Uh oh! Looks like you've reached your limit!"
+                    };
+                    chrome.notifications.create('limitNotif', notifOptions)
+                }
+            });
 
             $('#total').text(newTotal);
             inputBox.val('');
