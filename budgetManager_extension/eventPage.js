@@ -35,3 +35,8 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
         }
     }
 });
+
+chrome.storage.onChanged.addListener((changes, areaName) => {
+    chrome.browserAction.setBadgeText({'text': changes.total.newValue.toString()});
+    console.log(areaName)
+});
