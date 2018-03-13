@@ -12,5 +12,19 @@
     "default_icon": "icon16.png",
     "default_popup": "popup.html",
     "default_title": "PageFontStyle"
-  }
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://developer.chrome.com/*"],
+      "js": ["jquery-3.3.1.min.js", "content.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "https://developer.chrome.com/*"
+  ]
 }
